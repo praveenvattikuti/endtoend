@@ -37,7 +37,7 @@ pipeline {
               rtUpload (
                   buildName: 'MK',
                   serverId: 'jfrog',
-                  specPath: 'resources/props-upload.json'
+                  specPath: 'resources/set-props.json'
               )
             }
          
