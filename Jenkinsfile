@@ -34,12 +34,19 @@ pipeline {
         }
         stage ('push build') {
             steps {
-                rtUpload (
-                    serverId: "jfrog",
-                    specPath: "http://localhost:8082/artifactory/maven/"
-                   
-                )
+              script { 
+                 def server = Artifactory.server 'jfrog'
+                 def uploadSpec = """{
+                    "files": [{
+                       "pattern": "path/",
+                       "target": "path/"
+                    }]
+                 }"""
+
+                 server.upload(uploadSpec) 
+               }
             }
+         }
         }
     }
 
