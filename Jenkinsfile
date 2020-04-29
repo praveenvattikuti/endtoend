@@ -34,17 +34,9 @@ pipeline {
         }
         stage ('push build') {
             steps {
-              script { 
-                 def server = Artifactory.server 'jfrog'
-                 def uploadSpec = """{
-                    "files": [{
-                       "pattern": "path/",
-                       "target": "path/"
-                    }]
-                 }"""
-
-                 server.upload(uploadSpec) 
-               }
+              rtUpload (
+                  serverId: "jfrog"
+              )
             }
          
         }
