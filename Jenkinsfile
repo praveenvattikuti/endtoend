@@ -36,7 +36,7 @@ pipeline {
             steps {
                 rtUpload (
                     serverId: "jfrog",
-                    specpath: "http://localhost:8082/artifactory/generic-local/",
+                    specPath: "http://localhost:8082/artifactory/generic-local/",
                     failNoOp: true
                 )
             }
