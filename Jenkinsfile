@@ -34,7 +34,7 @@ pipeline {
         }
         stage ('push build') {
             steps {
-                rtPushBuild (
+                rtUpload (
                     serverId: "jfrog"
                 )
             }
