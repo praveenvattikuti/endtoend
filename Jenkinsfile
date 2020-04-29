@@ -35,7 +35,9 @@ pipeline {
         stage ('push build') {
             steps {
               rtUpload (
-                  serverId: "jfrog"
+                  buildName: 'MK',
+                  serverId: 'jfrog',
+                  specPath: 'resources/props-upload.json'
               )
             }
          
