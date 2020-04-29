@@ -32,5 +32,17 @@ pipeline {
                 )
             }
         }
+        stage ('push build') {
+            steps {
+                rtPushBuild (
+                    serverId: "jfrog"
+                )
+            }
+        }
+    }
+
+}
+     
+     
      }
 }
