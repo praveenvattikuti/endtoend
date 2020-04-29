@@ -36,7 +36,14 @@ pipeline {
             steps {
                 rtUpload (
                     serverId: "jfrog",
-                    specPath: "http://localhost:8082/artifactory/artifactory-build-info/devpipeline/10-1588175393475.json",
+                    spec: '''{
+          "files": [
+            {
+              "pattern": "bazinga/*froggy*.zip",
+              "target": "bazinga-repo/froggy-files/"
+            }
+         ]
+    }''',
                     failNoOp: true
                 )
             }
