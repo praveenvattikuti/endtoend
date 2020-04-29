@@ -34,10 +34,17 @@ pipeline {
         }
         stage ('push build') {
             steps {
-              rtUpload (
-                  buildName: 'MK',
-                  serverId: 'jfrog',
-                  specPath: 'resources/set-props.json'
+              def server = Artifactory.server 'jfrog'
+              def uploadSpec = """{
+  "files": [
+    {
+      "pattern": "target/*.jar",
+      "target": "jenkins-integration/"
+    }
+ ]
+}"""
+server.upload(uploadSpec)
+
               )
             }
          
