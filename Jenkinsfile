@@ -43,8 +43,8 @@ pipeline {
               "target": "bazinga-repo/froggy-files/"
             }
          ]
-    }''',
-                    failNoOp: true
+    }'''
+                   
                 )
             }
         }
