@@ -46,7 +46,7 @@ pipeline {
                  server.upload(uploadSpec) 
                }
             }
-         }
+         
         }
     }
 
