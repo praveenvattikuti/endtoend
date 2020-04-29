@@ -11,7 +11,7 @@ pipeline {
                 rtServer (
                     id: "jfrog",
                     url: "http://localhost:8082/artifactory",
-                    credentialsId: jfrog
+                    credentialsId: "jfrog"
                 )
             }
         }
